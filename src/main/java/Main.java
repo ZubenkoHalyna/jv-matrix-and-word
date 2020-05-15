@@ -50,7 +50,7 @@ public class Main {
             return "";
         }
         String stepMsg = getStepMsg(newX, newY);
-        if (matrix[newX][newY] == word.charAt(0) && ! path.contains(stepMsg)) {
+        if (matrix[newX][newY] == word.charAt(0) && !path.contains(stepMsg)) {
             return findPath(matrix, word.substring(1), path + "->" + stepMsg, newX, newY);
         }
         return "";
