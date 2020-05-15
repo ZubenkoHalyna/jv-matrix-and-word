@@ -49,8 +49,9 @@ public class Main {
         if (newX < 0 || newX >= matrix.length || newY < 0 || newY >= matrix.length) {
             return "";
         }
-        String stepMsg = getStepMsg(newX, newY);
-        if (matrix[newX][newY] == word.charAt(0) && !path.contains(stepMsg)) {
+        String stepMsg;
+        if (matrix[newX][newY] == word.charAt(0)
+                && !path.contains(stepMsg = getStepMsg(newX, newY))) {
             return findPath(matrix, word.substring(1), path + "->" + stepMsg, newX, newY);
         }
         return "";
