@@ -4,10 +4,11 @@ public class Main {
             System.out.println("Illegal arguments");
             return;
         }
-        Matrix matrix = new Matrix(args[0]);
-        if (matrix.isValid()) {
+        Matrix matrix = new Matrix();
+        char[][] chars = matrix.createMatrix(args[0]);
+        if (matrix.isValid(chars)) {
             String word = args[1];
-            System.out.println("Path: " + matrix.startSearch(word));
+            System.out.println("Path: " + matrix.startSearch(chars, word));
         }
     }
 }
